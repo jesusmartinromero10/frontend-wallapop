@@ -1,8 +1,10 @@
 
 import { pubSub } from "../pubSub.js";
 import { decodeToken } from "../utils/decodeToken.js";
+import { construcctorSpinnerVista } from "../utils/mostrarSpinner.js";
 import { obtenerAnunciosPorId, borrarAnuncio } from "./detallesAnuncios.js";
 import { construirDetalleAnuncio } from "./vistaAnuncios.js";
+import { ocultarSpinner } from "../utils/ocultarSpinner.js"
 
 
 export async function controladorDetallesAnuncios(elementoDetalleAnuncio, anuncioId) {
@@ -10,9 +12,11 @@ export async function controladorDetallesAnuncios(elementoDetalleAnuncio, anunci
     try {
         const anuncio = await obtenerAnunciosPorId(anuncioId)   
         
+        elementoDetalleAnuncio.innerHTML= construcctorSpinnerVista()
         elementoDetalleAnuncio.innerHTML = construirDetalleAnuncio(anuncio)
         
        manejadorBorradoAnuncioBoton(elementoDetalleAnuncio, anuncio)
+       ocultarSpinner(elementoDetalleAnuncio)
     } catch (error) {
       
       const adios = pubSub.publish(pubSub.TOPICS.MOSTRAR_NOTIFICACIONES, error.message)
