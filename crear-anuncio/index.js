@@ -1,4 +1,4 @@
-import { controladorCreacionAnuncio } from "./controladorCreacionAnuncio";
+import { controladorCreacionAnuncio } from "./controladorCreacionAnuncio.js";
 
 const token = localStorage.getItem('token')
 

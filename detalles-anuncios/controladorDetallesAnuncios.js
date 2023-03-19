@@ -1,16 +1,21 @@
+import { pubSub } from "../pubSub.js";
 import { decodeToken } from "../utils/decodeToken.js";
 import { obtenerAnunciosPorId, borrarAnuncio } from "./detallesAnuncios.js";
 import { construirDetalleAnuncio } from "./vistaAnuncios.js";
-
+//import { pubSub } from "../pubSub.js";
 
 export async function controladorDetallesAnuncios(elementoDetalleAnuncio, anuncioId) {
 
     try {
         const anuncio = await obtenerAnunciosPorId(anuncioId)   
+        
         elementoDetalleAnuncio.innerHTML = construirDetalleAnuncio(anuncio)
         manejadorBorradoAnuncioBoton(elementoDetalleAnuncio, anuncio)
     } catch (error) {
-        alert(error)
+      pubSub.publish(pubSub.TOPICS.MOSTRAR_NOTIFICACIONES, 'Se han cargado los anuncios correctamente')
+      pubSub.publish(pubSub.TOPICS.MOSTRAR_NOTIFICACIONES, error.message)
+      console.log(error.message)
+      
     }
 
     function manejadorBorradoAnuncioBoton(elementoDetalleAnuncio, anuncio){

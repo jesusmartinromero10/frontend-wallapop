@@ -4,13 +4,16 @@ export function contruirListadoAnuncio(anuncio){
   //const Date = new Date(anuncio.date)
 
   nuevoElementoAnuncio.innerHTML = `
-    <div class="user-info">
-      <span>${anuncio.nombre}</span>
-      <img src="${anuncio.fotografia}" />
-    </div>
-    <p>Descripcion : ${anuncio.descripcion}</p>
-    <p>Precio: ${anuncio.precio}</p>
-    <p>Estado: ${anuncio.estado}</p>
+  <a href = "./detalles-anuncio.html?anuncioId=${anuncio.id}">
+      <div class="user-info">
+        <p> Nombre: ${anuncio.nombre}</p>
+        <span>Fotografia: </span>
+        <img src="${anuncio.fotografia}" />
+        <p>Descripcion : ${anuncio.descripcion}</p>
+        <p>Precio: ${anuncio.precio}</p>
+        <p>Estado: ${anuncio.estado}</p>
+      </div>
+  </a>
   `;
 
   return nuevoElementoAnuncio;

@@ -8,11 +8,35 @@
 </head>
 <body>
   <h1>Creación de Anuncio</h1>
+  <section class = "notificaciones"></section>
 
   <form id="formularioCreacionAnuncio">
-    <textarea name="contenidoAnuncio" id="contenidoAnuncio" cols="30" rows="10" required></textarea>
+    <div>
+      <label for="nombreAnuncio">Nombre</label>
+      <input type="text" name="nombreAnuncio" id="nombreAnuncio" required>
 
-    <button type="submit">Crear tweet</button>
+    </div>
+    <div>
+      <label for="contanidoAnuncio">Descripción</label>
+      <textarea name="contenidoAnuncio" id="contenidoAnuncio" cols="30" rows="10" required></textarea>
+
+    </div>
+    <div>
+      <label for="precioAnuncio">Precio</label>
+      <input type="text" name="precioAnuncio" id="precioAnuncio" required>
+
+    </div>
+    <div>
+      <label for="estadoAnuncio">Estado</label>
+      <input type="text" name="estadoAnuncio" id="estadoAnuncio" required>
+
+    </div>
+    <div>
+      <label for="fotografiaAnuncio">Fotografía</label>
+      <input type="text" name="fotografiaAnuncio" id="fotografiaAnuncio">
+
+    </div>
+    <button type="submit">Crear anuncio</button>
   </form>
 
   <script type="module" src="./crear-anuncio/index.js"></script>

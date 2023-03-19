@@ -1,4 +1,5 @@
-import { creacionAnuncio } from "./CrearAnuncio.js"
+import { crearAnuncio } from "./crearAnuncio.js"
+import { pubSub } from "../pubSub.js";
 
 
 export async function controladorCreacionAnuncio (elementoFormularioCreacionAnuncio) {
@@ -7,12 +8,16 @@ export async function controladorCreacionAnuncio (elementoFormularioCreacionAnun
 
         const datosFormulario = new FormData(elementoFormularioCreacionAnuncio);
         const contenidoAnuncio = datosFormulario.get('contenidoAnuncio');
-
+        const nombreAnuncio = datosFormulario.get('nombreAnuncio');
+        const precioAnuncio = datosFormulario.get('precioAnuncio');
+        const estadoAnuncio = datosFormulario.get('estadoAnuncio');
+        const fotografiaAnuncio = datosFormulario.get('fotografiaAnuncio');
         try {
-            await creacionAnuncio(contenidoAnuncio)
+            await crearAnuncio(contenidoAnuncio, nombreAnuncio, precioAnuncio, estadoAnuncio, fotografiaAnuncio)
             window.location = '/'   
         } catch (error) {
-            alert(error)
+            pubSub.publish(pubSub.TOPICS.MOSTRAR_NOTIFICACIONES, error.message)
+            
             
         }
     })
