@@ -24,7 +24,7 @@ export function signupController(signupElement) {
     }
   })
 
-  // todo: refactor this using isEmailValid util function.
+  
   function isEmailValid(email) {
     const mailRegExp = new RegExp(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/);
 

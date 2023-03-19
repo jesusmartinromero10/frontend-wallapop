@@ -35,7 +35,7 @@ export async function controladorDetallesAnuncios(elementoDetalleAnuncio, anunci
             const informaciomUsuario = decodeToken(token);
             if (anuncio.userId === informaciomUsuario.userId) {
               
-              // añadir evento click al boton + enganchar con sparrest
+              
               elementoBorradoBoton.addEventListener('click', async () => {
                 const pregunta = confirm('¿Deseas borrar el anuncio? seguro??!?!?!')
                 if (pregunta) {

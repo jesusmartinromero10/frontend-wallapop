@@ -1,7 +1,7 @@
 export function contruirListadoAnuncio(anuncio){
   const nuevoElementoAnuncio = document.createElement('article');
   nuevoElementoAnuncio.classList.add('anuncio')
-  //const Date = new Date(anuncio.date)
+  
 
   nuevoElementoAnuncio.innerHTML = `
   <a href = "./detalles-anuncio.html?anuncioId=${anuncio.id}">
