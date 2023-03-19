@@ -18,12 +18,9 @@ export async function controladorDetallesAnuncios(elementoDetalleAnuncio, anunci
        manejadorBorradoAnuncioBoton(elementoDetalleAnuncio, anuncio)
        ocultarSpinner(elementoDetalleAnuncio)
     } catch (error) {
-      
-      const adios = pubSub.publish(pubSub.TOPICS.MOSTRAR_NOTIFICACIONES, error.message)
-      
-      console.log(adios)
       pubSub.publish(pubSub.TOPICS.MOSTRAR_NOTIFICACIONES, error.message)
-      console.log(error.message)
+      
+    
       
     }
 

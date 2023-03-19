@@ -1,0 +1,46 @@
+{
+  "users": [
+    {
+      "username": "manyso@hotmail.com",
+      "password": "$2b$10$0Ik0btdcsgkvdWwr2PFyXOpIb9dxR.xATHQkNWjhQifxeJLUDgnOC",
+      "id": 1
+    },
+    {
+      "username": "jmartin99@latinmail.com",
+      "password": "$2b$10$oGndILLhDPEYtPEy5J0LNOHbZikmGcZIN/zNIdHVmfLHhVUKFJRuS",
+      "id": 2
+    }
+  ],
+  "anuncios": [
+    {
+      "nombre": "Tabla de Surf",
+      "descripcion": "Tabla de surf en perfecto estado",
+      "precio": "123",
+      "estado": "venta",
+      "fotografia": "https://i.blogs.es/ab7111/varial/1366_2000.jpg",
+      "userId": 2,
+      "updatedAt": "2023-03-19T16:37:35.152Z",
+      "id": 1
+    },
+    {
+      "nombre": "MERCEDES-BENZ - CLASE GLA",
+      "descripcion": "ITV recien pasada, ruedas en buen estado, techo solar,  exterior excelente, se recomienda ver en persona\n\n",
+      "precio": "55000",
+      "estado": "venta",
+      "fotografia": "https://cdn.drivek.com/configurator-imgs/cars/es/800/MERCEDES/A-CLASS/41448_HATCHBACK-5-DOORS/mercedes-benz-classe-a-hb-front-view.jpg",
+      "userId": 2,
+      "updatedAt": "2023-03-19T16:40:23.178Z",
+      "id": 2
+    },
+    {
+      "nombre": "SUNSEEKER CAMARGUE 55",
+      "descripcion": "Sunseeker Camargue 55 del año 1993 en muy buenas condiciones. \nLa embarcación se encuentra en proceso de reacondicionamiento. \nYa se a repasado la obra viva por completo cambiando pasacascos, grifos y estopadas de eje (Tides Marine) \nSe entrega con los motores en perfecto funcionamiento y revisados. \nLa embarcación precisa de pequeños arreglos estéticos y Tapiceria exterior, toldos. \nInterior en perfecto estado (Limpieza) ",
+      "precio": "150000",
+      "estado": "venta",
+      "fotografia": "https://images.boatsgroup.com/resize/1/5/57/7670557_20201127031928967_1_XLARGE.jpg",
+      "userId": 2,
+      "updatedAt": "2023-03-19T16:42:16.992Z",
+      "id": 3
+    }
+  ]
+}
