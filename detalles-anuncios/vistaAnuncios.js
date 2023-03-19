@@ -1,7 +1,12 @@
 export const construirDetalleAnuncio = (anuncio) => {
-    const anuncioDate = new Date(anuncio.updatedAt)
-    return `
-      <p>${anuncio.nombre} - ${anuncioDate.toISOString()}</p>
+  return `
+  <article>
+      <p><span>${anuncio.nombre}</span><span>${anuncio.precio}</span></p>
+      <p>${anuncio.descripcion}</p>
+      <p>${anuncio.precio} €.</p>
+      <img src=${anuncio.fotografia}></img>
+  
+</article>
       <button id="borrarAnuncio">borrar anuncio</button>
     `
-  }
+}

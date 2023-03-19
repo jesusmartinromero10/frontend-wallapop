@@ -1,5 +1,6 @@
 export async function obtenerAnunciosPorId (anuncioId){
-    const response = fetch(`http://localhost:8000/api/anuncios/${anuncioId}`)
+    const response = await fetch(`http://localhost:8000/api/anuncios/${anuncioId}`)
+    
 
     if (!response.ok){
         throw new Error('El anuncio solicitado no existe')
