@@ -20,9 +20,9 @@ export function contruirListadoAnuncio(anuncio){
 }
 
 
-export function construcctorSpinnerVista() {
-    return `<div class="spinner"><div></div><div></div><div></div></div>`
-  }
+//export function construcctorSpinnerVista() {
+//    return `<div class="spinner"><div></div><div></div><div></div></div>`
+//  }
 
 export function constructorErrorLeerAnuncios() {
 return `<p class="load-error">Ha habido un problema cargando los anuncios. Inténtalo de nuevo más tarde</p>`

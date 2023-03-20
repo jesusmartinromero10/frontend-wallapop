@@ -10,14 +10,16 @@ import { ocultarSpinner } from "../utils/ocultarSpinner.js"
 export async function controladorDetallesAnuncios(elementoDetalleAnuncio, anuncioId) {
 
     try {
+      elementoDetalleAnuncio.innerHTML= construcctorSpinnerVista()
         const anuncio = await obtenerAnunciosPorId(anuncioId)   
         
-        elementoDetalleAnuncio.innerHTML= construcctorSpinnerVista()
         elementoDetalleAnuncio.innerHTML = construirDetalleAnuncio(anuncio)
         
        manejadorBorradoAnuncioBoton(elementoDetalleAnuncio, anuncio)
-       ocultarSpinner(elementoDetalleAnuncio)
-    } catch (error) {
+       pubSub.publish(pubSub.TOPICS.MOSTRAR_NOTIFICACIONES, 'Anuncio cargado correctamente')
+
+      } catch (error) {
+      ocultarSpinner(elementoDetalleAnuncio)
       pubSub.publish(pubSub.TOPICS.MOSTRAR_NOTIFICACIONES, error.message)
       
     

@@ -1,6 +1,8 @@
 import { traerAnuncios } from "./anuncios.js";
 import { pubSub } from "../pubSub.js";
-import { construcctorSpinnerVista, constructorListaAnuncioVacia, contruirListadoAnuncio } from "./vista-anuncios.js";
+import {  constructorListaAnuncioVacia, contruirListadoAnuncio } from "./vista-anuncios.js";
+import { ocultarSpinner } from "../utils/ocultarSpinner.js";
+import { construcctorSpinnerVista } from "../utils/mostrarSpinner.js"
 
 export async function controladorListadoAnuncios(elementoListadoAnuncio) {
     elementoListadoAnuncio.innerHTML = construcctorSpinnerVista()
@@ -34,11 +36,11 @@ export async function controladorListadoAnuncios(elementoListadoAnuncio) {
 }
 
 
-function ocultarSpinner(elementoListadoAnuncio){
-    const elementoSpinner = elementoListadoAnuncio.querySelector('.spinner')
-    elementoSpinner.classList.add('ocultar')
+//function ocultarSpinner(elementoListadoAnuncio){
+//    const elementoSpinner = elementoListadoAnuncio.querySelector('.spinner')
+///    elementoSpinner.classList.add('ocultar')
 
-}
+//}
 
 function mostrarAnuncios(elementoListadoAnuncio, anuncios){
     for (const anuncio of anuncios){
